@@ -1,0 +1,13 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "command": "node",
+    "args": [ "${workspaceRoot}/build.js" ],
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": [],
+            "isBuildCommand": true
+        }
+    ]
+}
