@@ -1,0 +1,11 @@
+{
+    "name": "erlang-grammar",
+    "version": "0.0.1",
+    "private": true,
+    "license": "MIT",
+    "devDependencies": {
+        "vscode-textmate": "^1.1.0",
+        "bluebird": "^3.4.1",
+        "glob": "*"
+    }
+}
