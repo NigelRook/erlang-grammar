@@ -43,13 +43,12 @@ fs.readFileAsync(snippetsFile, 'utf8').then(function(data) {
 
 function replacer(key, value) {
     if (typeof value === 'string') {
-        var match = value.match(/^\$\{inc:(.*)\}$/); 
+        var match = value.match(/^\$\{inc:([^}]*)\}$/);
         if (match) {
-            return snippets[match[1]];
+            return replacer(key, snippets[match[1]]);
         } else {
-            return value.replace(/\$\{(.*)\}/g, function(match, key) {
-                return snippets[key];
-            });
+            var newValue = value.replace(/\$\{([^}]*)\}/g, function(match, key) { return snippets[key]; })
+            return newValue === value ? value : replacer(key, newValue);
         }
     }
 
