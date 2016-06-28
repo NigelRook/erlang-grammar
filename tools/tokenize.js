@@ -13,7 +13,7 @@ var line = 1;
 
 rl.on('line', function(line) {
     var r = grammar.tokenizeLine(line, ruleStack);
-    console.log('Line: #' + line + ', tokens:\n' + util.inspect(r.tokens));
+    console.log('Line: ' + JSON.stringify(line) + ' - tokens:\n' + util.inspect(r.tokens));
     ruleStack = r.ruleStack;
 });
 
